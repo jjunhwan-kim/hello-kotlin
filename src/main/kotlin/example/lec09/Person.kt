@@ -3,6 +3,7 @@ package example.lec09
 /**
  * 1. 클래스와 프로퍼티
  *  constructor 지시어 생략 가능
+ *  프로퍼티 = 필드 + getter + setter
  *  Kotlin에서는 필드 만들면 자동으로 getter, setter를 만들어 줌
  *  생성자에서 프로퍼티를 만들 수 있음
  *   - 프로퍼티 선언(필드 + getter + setter)과 생성자를 동시에 할 수 있음
@@ -18,6 +19,9 @@ class Person2(name: String, age: Int) {
     var age = age
 }
 
+class Person3(
+    val name: String,
+    var age: Int)
 
 /**
  * 2. 생성자와 init
@@ -28,7 +32,7 @@ class Person2(name: String, age: Int) {
  */
 class Person(
     name: String,
-    var age: Int
+    var age: Int = 1 // default parameter
 ) {
     init {
         if (age <= 0) {
@@ -48,23 +52,28 @@ class Person(
      * => backing field
      */
 
-    // custom setter를 사요하기 보다는 업데이트 메서드를 따로 만드는 것을 권장
+    // custom setter를 사용하기 보다는 업데이트 메서드를 따로 만드는 것을 권장
     var name = name
       set(value) {
           field = value.uppercase() // backing field
       }
 
     // backing field를 사용하여 custom getter를 만들 일이 거의 없음
-    //val name = name
-        //get() = field.uppercase()
+    /*
+    val name = name
+        get() = field.uppercase()
+    */
 
     // 함수로 처리
+    /*
     fun getUppercaseName(): String = this.name.uppercase()
+    */
 
     // custom getter
-    //val uppercaseName: String
-        //get() = this.name.uppercase()
-
+    /*
+    val uppercaseName: String
+        get() = this.name.uppercase()
+    */
 
 
     /**
@@ -104,8 +113,4 @@ class Person(
         get() {
             return this.age >= 20
         }
-
-
-
-
 }

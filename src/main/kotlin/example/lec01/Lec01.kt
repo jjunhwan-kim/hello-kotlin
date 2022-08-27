@@ -9,6 +9,8 @@ fun main(args: Array<String>) {
      * var 가변
      * val 불변
      * 모든 변수는 우선 val로 만들고 꼭 필요한 경우 var로 변경을 권장
+     * 초기 값 지정 없이 사용시 컴파일 에러 발생
+     * val 변수는 불변이지만, val 컬렉션에는 element 추가 가능
      */
 
     var number1 = 10L
@@ -26,6 +28,14 @@ fun main(args: Array<String>) {
     number4 = 10  // val 최초 1번 할당 가능
     println(number4)
 
+    val a: Int
+    var b: Int
+    //println(a)
+    //println(b)
+    val list = mutableListOf(1, 2, 3)
+    list.add(4)
+    println(list)
+
 
     /**
      * 2. Kotlin에서의 Primitive Type
@@ -34,6 +44,7 @@ fun main(args: Array<String>) {
      * JAVA 코드로 디컴파일을 해보면 연산시에는 Primitive Type으로 적절하게 변환되서 사용됨
      */
 
+    println("===")
     var number5 = 10L
     number5 *= 20L
     var number6 = 1_000L
@@ -42,6 +53,7 @@ fun main(args: Array<String>) {
      * 3. Kotlin에서의 nullable 변수
      * Kotlin에서 null이 변수에 들어갈 수 있다면 "타입?"를 사용해야 함
      */
+    println("===")
 
     var number7 = 1_000L
     //number7 = null  // 기본적으로 null 할당 불가능
@@ -51,8 +63,8 @@ fun main(args: Array<String>) {
 
     /**
      * 4. Kotlin에서의 객체 인스턴스화
-     * Kotlin에서 객체 인스턴스화를 할 때에는 new를 붙이지 않아야 한다.
+     * Kotlin에서 객체 인스턴스화를 할 때에는 new를 붙이지 않아야 함
      */
 
-    //var person = example.lec03.Person("최태현")
+    //var person = Person("최태현")
 }

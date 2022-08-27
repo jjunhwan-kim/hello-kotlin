@@ -3,7 +3,7 @@ package example.lec05
 fun main(args: Array<String>) {
     println("Lec 05")
 
-    //example.lec05.validateScoreIsNotNegative(-10)
+    //validateScoreIsNotNegative(-10)
     println(getPassOrFail(40))
     println(getGrade(80))
 }
@@ -52,13 +52,12 @@ fun getGrade(score: Int): String {
  * 범위 연산자
  */
 fun validateScore(score: Int) {
-    if (score !in 0..100) {
-        // score < 0 || score > 100
+    if (score !in 0..100) {   // if (score < 0 || score > 100)
         throw IllegalArgumentException("score의 범위는 0부터 100입니다")
     }
 
-    if (score in 0..100) {
-        // score >= 0 && score <= 100
+    if (score in 0..100) {    // if (score >= 0 && score <= 100)
+
     }
 }
 
@@ -88,7 +87,7 @@ fun getGradeWithSwitch(score: Int): String {
 
 fun startsWithA(obj: Any): Boolean {
 
-    //return (obj as? String)?.example.lec02.startsWith("A") ?: false
+    //return (obj as? String)?.startsWith("A") ?: false
 
     return when (obj) {
         is String -> obj.startsWith("A")

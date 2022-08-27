@@ -25,7 +25,7 @@ fun main(args: Array<String>) {
 
 /**
  * 1. 함수 선언 문법
- * - public은 생략 가능
+ * - 접근 지시어 public은 생략 가능
  * - fun은 함수를 의미하는 키워드
  * - 반환 타입에서 Java void처럼 Kotlin의 Unit은 생략가능
  */
@@ -39,6 +39,8 @@ fun max(a: Int, b: Int) = if (a > b) a else b
 
 /**
  * 2. default parameter
+ * Java의 메서드 오버로딩대신 default parameter를 사용할 수 있음
+ * Kotlin에도 Java와 동일하게 오버로드 기능은 있음
  */
 
 fun repeat(str: String, num: Int = 3, useNewLine: Boolean = true) {

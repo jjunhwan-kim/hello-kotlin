@@ -23,6 +23,5 @@ fun main(args: Array<String>) {
 
     println("===")
     val person4 = Person()
-
 }
 

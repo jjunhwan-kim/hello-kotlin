@@ -34,7 +34,7 @@ fun main(args: Array<String>) {
      * ..연산자 - 범위를 만들어 내는 연산자
      * 1..3 - 1부터 3의 범위
      *
-     * downTo, step은 함수! (중위함수)
+     * downTo, step은 함수! (중위 호출 함수)
      */
 
     for (i in 1..3) {

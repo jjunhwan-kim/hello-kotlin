@@ -6,6 +6,7 @@ fun main(args: Array<String>) {
     /**
      * 1. 기본 타입
      * 타입을 변환하기위해 명시적으로 to변환타입() 메서드를 호출해야함
+     * Kotlin에서는 선언된 기본 값을 보고 타입을 추론함
      */
     val number1 = 3 // Int
     val number2 = 3L // Long
@@ -14,12 +15,12 @@ fun main(args: Array<String>) {
 
 
     val number5 = 4 // Int
-    //val number6: Long = number5 // Type mismatch 암시적 타입 변경 불가능
+    //val number6: Long = number5 // Type mismatch, Kotlin에서는 암시적 타입 변경 불가능
     val number6: Long = number5.toLong()
 
     val number7 = 4
     val number8 = 5
-    val result = number7 / number8.toDouble()
+    val result = number7 / number8.toDouble() // to변환타입() 메서드를 사용하여 명시적 타입 변환 가능
 
     println(result)
 
@@ -42,20 +43,24 @@ fun main(args: Array<String>) {
  */
 
 fun printAgeIfPerson1(obj: Any) {
-    if (obj is Person) {
-        val person = obj as Person
+    if (obj is Person) {              // if (obj instanceof Person)
+        val person = obj as Person    //     Person person = (Person) obj;
         //println(person.age)
-        println(obj.age) // 가능
+        println(obj.age) // 스마트 캐스트, 형 변환하지 않고 obj로 person의 프로퍼티에 접근가능
     }
 
-    if (obj !is Person) { // if (!(obj instanceof example.lec03.Person))
+    if (obj !is Person) {             // if (!(obj instanceof Person))
 
     }
 }
 
+/**
+ * value as Type - value가 Type이면 Type으로 캐스팅, 아니면 예외 발생
+ * value as? Type - value가 Type이면 Type으로 캐스팅, value가 null이거나 Type이 아니면 null
+ */
 fun printAgeIfPerson2(obj: Any?) {
     // as?를 사용하면 obj가 null일 경우 person은 null이 됨
-    // as?를 사용하면 obj가 example.lec03.Person 타입이 아닐경우 null이 됨
+    // as?를 사용하면 obj가 Person 타입이 아닐경우 null이 됨
     val person = obj as? Person
     println(person?.age) // person이 null이 될 수 있으므로 Safe Call 사용
 }

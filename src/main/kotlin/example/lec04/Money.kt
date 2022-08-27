@@ -6,6 +6,6 @@ class Money(val amount: Long) {
     }
 
     override fun toString(): String {
-        return "example.lec04.Money(amount=$amount)"
+        return "Money(amount=$amount)"
     }
 }

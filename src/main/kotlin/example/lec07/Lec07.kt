@@ -17,7 +17,7 @@ fun parseIntOrThrow(str: String): Int {
     try {
         return str.toInt() // 기본 타입간의 형변환은 toType() 사용
     } catch (e: NumberFormatException) {
-        throw IllegalArgumentException("주어진 ${str}는 숫자가 아닙니다")
+        throw IllegalArgumentException("주어진 ${str}는 숫자가 아닙니다") // 예외 throw시 new 키워드 사용하지 않음
     }
 }
 

@@ -41,7 +41,7 @@ fun main(args: Array<String>) {
      * a[i] - a에서 특정 index i로 값을 가져옴
      * a[i] = b - a의 특정 index i에 b를 할당
      */
-    if (fun1() || fun2()) { // Lazy 연산 수행, example.lec04.fun1()이 true이므로 example.lec04.fun2()는 실행되지 않음
+    if (fun1() || fun2()) { // Lazy 연산 수행, fun1()이 true이므로 fun2()는 실행되지 않음
         println("본문")
     }
 

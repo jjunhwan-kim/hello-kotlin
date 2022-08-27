@@ -36,7 +36,7 @@ public class JavaMoney implements Comparable<JavaMoney> {
 
     @Override
     public String toString() {
-        return "example.lec04.JavaMoney{" +
+        return "JavaMoney{" +
                 "amount=" + amount +
                 '}';
     }
