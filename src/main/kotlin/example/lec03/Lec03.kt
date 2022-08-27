@@ -97,7 +97,7 @@ fun printAgeIfPerson2(obj: Any?) {
 
 fun print(person: Person) {
 
-    System.out.println(String.format("사람의 이름은 %s 이고 나이는 %d 세 입니다", person.name, person.age));
+    System.out.println(String.format("사람의 이름은 %s 이고 나이는 %d 세 입니다", person.name, person.age))
 
     val log = "사람의 이름은 ${person.name} 이고 나이는 ${person.age} 세 입니다"
 
